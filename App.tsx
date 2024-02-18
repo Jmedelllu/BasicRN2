@@ -1,79 +1,76 @@
 import {
-  Text, 
-  View, 
-  Image, 
-  ScrollView, 
-  TextInput, 
-  StyleSheet,
-} from 'react-native';
+   Text,
+    View,
+     TextInput,
+      StyleSheet,
+       TouchableOpacity 
+      } from 'react-native';
 import React from 'react';
 
 const App = () => {
   return (
-    <View>
-      <Text style={style.title}>Tempo Doeloe Restaurant</Text>
-      <ScrollView>
-        <Text style={style.menu}>Menu</Text>
+    <View style={style.container}>
+      <Text style={style.title}> Welcome</Text>
+      <View style={style.inputContainer}>
+        <Text style={style.words}>  Username</Text>
         <TextInput
-        placeholder="Masukkan pesanan anda"
-        style={style.inputUsername}
+        placeholder="Masukkan username anda"
+        style={style.input}
         />
-        <Text style={style.koda}> 1 </Text>
-        <Image
-          source={require('./assets/klepon.jpg')}
-          style={{width: 400,  height: 200}}
-        />
-        <Text style={style.koda}> 2 </Text>
-        <Image
-          source={require('./assets/lumpia.jpg')}
-          style={{width: 400,  height: 200}}
-        />
-        <Text style={style.koda}> 3 </Text>
-        <Image
-          source={require('./assets/pisangijo.jpg')}
-          style={{width: 400,  height: 200}}
-        />
-        <Text style={style.koda}> 4 </Text>
-        <Image
-          source={require('./assets/sotobetawi.jpg')}
-          style={{width: 400,  height: 200}}
-        />
-        
-        </ScrollView>
       </View>
+      <View style={style.inputContainer}>
+        <Text style={style.words}>  Password</Text>
+        <TextInput
+        placeholder="Masukkan username anda"
+        style={style.input}
+        />
+      </View>
+      <View style={style.inputContainer}></View>
+      <TouchableOpacity style={style.button}>
+        <Text style={style.buttonText}>Sign In</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    padding: 20,
+  },
   title: {
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
-    marginTop: 10,
-    marginBottom: 5,
-  },
-  koda: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
-    marginTop: 5,
-    marginBottom: 5,
-  },
-  menu: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
+    color: 'black',
     marginTop: 10,
   },
-  inputUsername: {
-    borderColor: 'black',
+  words: {
+    fontSize: 17,
+    fontWeight: '500',
+    color: 'black',
+  },
+  inputContainer: {
+    marginTop: 25,
+  },
+  input: {
+    borderColor: 'gray',
     borderWidth: 1,
     margin: 10,
     borderRadius: 10,
-    padding: 10,    
+    padding: 13,
+  },
+  button: {
+    backgroundColor: '#E36414',
+    borderRadius: 10,
+    padding: 15,
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  buttonText: {
+    fontSize: 13,
+    fontWeight: 'bold',
+    color: 'white',
   },
 });
 
